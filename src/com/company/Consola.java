@@ -13,12 +13,12 @@ public class Consola {
         String intro = myObj.nextLine();
         if (Objects.equals(intro, "1"))
         {
-            String[][] equipos = new String[][]{{"River", "4"}, {"Racing", "6"}, {"Boca", "3"},
-                    {"Independiente", "5"}, {"Estudiantes", "10"}, {"Gimnasia", "0"}};
-            String[][] partidos = Data.partidos_random(11, equipos);
+            // usando partidos_random con varios equipos es muy probable que no exista la combinacion correcta.
+            String[][] equipos = new String[][]{{"River", "4"}, {"Racing", "4"}, {"Boca", "3"},
+                    {"Independiente", "2"}, {"Estudiantes", "7"}, {"Gimnasia", "0"}};
+            String[][] partidos = Data.partidos_random(6, equipos);
             Data.presentar_data(equipos, partidos);
             BruteForce brute = new BruteForce(equipos, partidos);
-            brute.combinaciones_posibles(10, 4);
         }
     }
 
